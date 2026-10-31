@@ -10,7 +10,7 @@ interface NavbarProps {
 }
 
 const navItems = [
-  { name: "Home", href: "#hero" },
+  { name: "Home", href: "#home" },
   { name: "Tentang Saya", href: "#about" },
   { name: "Project", href: "#projects" },
   { name: "Kontak", href: "#contact" },

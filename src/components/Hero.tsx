@@ -17,7 +17,7 @@ export function Hero({ unlocked, onExplore, theme, onToggleTheme }: HeroProps) {
 
   return (
     <section
-      id="hero"
+      id="home"
       className="min-h-[100dvh] flex flex-col justify-center items-center px-6 py-20 relative"
     >
       {/* Tombol Tema di Hero saat awal (sebelum navbar muncul) */}
@@ -40,21 +40,23 @@ export function Hero({ unlocked, onExplore, theme, onToggleTheme }: HeroProps) {
       <div className="max-w-5xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Sisi Kiri: Teks, Headline, Deskripsi, Tombol Aksi & Sosmed */}
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
-          <span
+          {/* H1: Role (Tetap ukuran compact seperti sekarang) */}
+          <h1
             className={`text-sm font-semibold tracking-wider uppercase mb-2 ${
               theme === "dark" ? "text-zinc-400" : "text-zinc-500"
             }`}
           >
             {personal.role}
-          </span>
+          </h1>
 
-          <h1
+          {/* H2: Name (Tetap ukuran besar seperti sekarang) */}
+          <h2
             className={`text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
           >
             {personal.name}
-          </h1>
+          </h2>
 
           <p
             className={`mt-4 text-base sm:text-lg max-w-xl leading-relaxed ${
