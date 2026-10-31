@@ -11,6 +11,8 @@ import { ProjectsSection } from "@/components/Projects";
 import { ContactSection } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { SnowEffect } from "@/components/SnowEffect";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { portfolioData } from "@/data/portfolio";
 
 export default function Home() {
   const [unlocked, setUnlocked] = useState(false);
@@ -44,8 +46,13 @@ export default function Home() {
     <div
       className={`min-h-[100dvh] transition-colors duration-300 flex flex-col relative ${
         theme === "dark" ? "bg-zinc-950 text-zinc-100" : "bg-[#fcfcfc] text-zinc-900"
-      } ${!unlocked ? "h-[100dvh] overflow-hidden" : ""}`}
+      } ${!unlocked ? "h-[100dvh] overflow-y-auto overflow-x-hidden" : ""}`}
     >
+      {/* Tirai pembuka: terangkat otomatis lewat CSS, tidak butuh JS */}
+      <div className="intro-curtain" aria-hidden="true">
+        <span className="intro-word">{portfolioData.personal.name}</span>
+      </div>
+
       {/* Efek Salju Halus Turun */}
       <SnowEffect />
 
@@ -77,6 +84,7 @@ export default function Home() {
       </main>
 
       {unlocked && <Footer theme={theme} />}
+      {unlocked && <ScrollReveal />}
     </div>
   );
 }

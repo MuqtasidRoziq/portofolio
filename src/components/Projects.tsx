@@ -14,6 +14,7 @@ export function ProjectsSection({ theme }: ProjectsProps) {
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-14">
           <h2
+            data-reveal
             className={`text-3xl sm:text-4xl font-bold tracking-tight ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
@@ -21,6 +22,7 @@ export function ProjectsSection({ theme }: ProjectsProps) {
             Proyek Pilihan
           </h2>
           <p
+            data-reveal
             className={`mt-3 text-base max-w-xl ${
               theme === "dark" ? "text-zinc-400" : "text-zinc-600"
             }`}
@@ -33,6 +35,7 @@ export function ProjectsSection({ theme }: ProjectsProps) {
           {projects.map((project, idx) => (
             <article
               key={idx}
+              data-reveal
               className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-6"
             >
               <div className="md:col-span-5 space-y-2">

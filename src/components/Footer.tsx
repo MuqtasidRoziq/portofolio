@@ -21,7 +21,7 @@ export function Footer({ theme }: FooterProps) {
         theme === "dark" ? "text-zinc-500" : "text-zinc-500"
       }`}
     >
-      <div className="mx-auto max-w-5xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div data-reveal className="mx-auto max-w-5xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           &copy; {year}{" "}
           <span

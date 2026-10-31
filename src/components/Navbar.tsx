@@ -69,9 +69,9 @@ export function Navbar({ unlocked, theme, onToggleTheme }: NavbarProps) {
           }`}
         >
           {theme === "dark" ? (
-            <Sun className="h-4 w-4 text-amber-300" />
+            <Sun className="h-4 w-4 text-zinc-100" />
           ) : (
-            <Moon className="h-4 w-4 text-zinc-700" />
+            <Moon className="h-4 w-4 text-zinc-900" />
           )}
         </button>
       </div>

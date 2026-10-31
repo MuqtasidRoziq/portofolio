@@ -36,6 +36,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: "/favicon.webp",
+    shortcut: "/favicon.webp",
+    apple: "/favicon.webp",
+  },
   openGraph: {
     title: "Muqtasid Roziq | Full-Stack Developer & Software Engineer",
     description:

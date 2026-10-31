@@ -12,6 +12,7 @@ export function Skills({ theme }: SkillsProps) {
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-14">
           <h2
+            data-reveal
             className={`text-3xl sm:text-4xl font-bold tracking-tight ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
@@ -19,6 +20,7 @@ export function Skills({ theme }: SkillsProps) {
             Keahlian & Teknologi
           </h2>
           <p
+            data-reveal
             className={`mt-3 text-base max-w-xl ${
               theme === "dark" ? "text-zinc-400" : "text-zinc-600"
             }`}
@@ -29,7 +31,7 @@ export function Skills({ theme }: SkillsProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skills.map((group, idx) => (
-            <div key={idx} className="space-y-4">
+            <div key={idx} data-reveal className="space-y-4">
               <h3
                 className={`text-sm font-semibold pb-2 ${
                   theme === "dark" ? "text-zinc-200" : "text-zinc-800"

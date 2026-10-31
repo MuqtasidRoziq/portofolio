@@ -13,13 +13,14 @@ export function About({ theme }: AboutProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
             <h2
+              data-reveal
               className={`text-3xl sm:text-4xl font-bold tracking-tight ${
                 theme === "dark" ? "text-zinc-100" : "text-zinc-900"
               }`}
             >
               Tentang Saya
             </h2>
-            <div className="mt-6 space-y-3 text-sm">
+            <div data-reveal className="mt-6 space-y-3 text-sm">
               <div>
                 <span className="text-zinc-500 block text-xs">Lokasi</span>
                 <span
@@ -55,6 +56,7 @@ export function About({ theme }: AboutProps) {
           </div>
 
           <div
+            data-reveal
             className={`lg:col-span-8 space-y-6 text-base leading-relaxed ${
               theme === "dark" ? "text-zinc-300" : "text-zinc-700"
             }`}

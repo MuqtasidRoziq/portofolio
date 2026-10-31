@@ -14,6 +14,7 @@ export function ContactSection({ theme }: ContactProps) {
       <div className="mx-auto max-w-5xl px-6">
         <div className="max-w-2xl">
           <h2
+            data-reveal
             className={`text-3xl sm:text-4xl font-bold tracking-tight ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
@@ -21,6 +22,7 @@ export function ContactSection({ theme }: ContactProps) {
             Kontak & Diskusi
           </h2>
           <p
+            data-reveal
             className={`mt-4 text-base leading-relaxed ${
               theme === "dark" ? "text-zinc-400" : "text-zinc-600"
             }`}
@@ -28,7 +30,7 @@ export function ContactSection({ theme }: ContactProps) {
             Tertarik untuk berkolaborasi, berdiskusi mengenai proyek web, atau memiliki peluang kerja sama? Silakan hubungi saya melalui jalur di bawah ini.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div data-reveal className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <a
               href={`mailto:${personal.email}`}
               className={`inline-flex items-center gap-2 rounded-full font-semibold px-6 py-3 text-sm active:scale-95 transition-transform ${

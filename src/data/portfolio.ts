@@ -51,17 +51,17 @@ export const portfolioData: PortfolioData = {
   personal: {
     name: "Muhammad Muqtasid Roziq",
     role: "Full-Stack Developer & Software Engineer",
-    bio: "Pengembang perangkat lunak yang berfokus pada pembangunan aplikasi web modern, performan, responsif, dan mudah digunakan.",
+    bio: "Saya adalah seorang developer yang berfokus merancang dan mengembangkan aplikasi web modern yang cepat, elegan, dan mudah digunakan.",
     about: [
       "Halo! Saya Muqtasid Roziq, seorang pengembang perangkat lunak yang antusias dalam merancang dan mengembangkan solusi digital dari konsep hingga deployment.",
       "Saya memiliki ketertarikan kuat pada ekosistem web modern seperti React, Next.js, TypeScript, serta arsitektur backend yang andal. Saya selalu berkomitmen untuk menulis kode yang bersih, mudah dipelihara, dan berpusat pada pengalaman pengguna.",
       "Selain ngoding, saya aktif berkolaborasi dalam organisasi teknologi, berbagi pengetahuan dengan komunitas, dan terus mengeksplorasi tren teknologi terbaru."
     ],
     location: "Indonesia",
-    email: "muqtasidroziq@example.com",
+    email: "muqtasidofficial@gmail.com",
     github: "https://github.com/muqtasidroziq",
-    linkedin: "https://linkedin.com/in/muqtasidroziq",
-    instagram: "https://instagram.com/muqtasidroziq",
+    linkedin: "https://www.linkedin.com/in/muhammad-muqtasid-roziq/",
+    instagram: "https://www.instagram.com/muqtsdrziq/",
     availableForHire: true,
   },
   skills: [
