@@ -13,7 +13,7 @@ export function ExperienceSection({ theme }: ExperienceProps) {
         <div className="mb-14">
           <h2
             data-reveal
-            className={`text-3xl sm:text-4xl font-bold tracking-tight ${
+            className={`text-3xl sm:text-4xl font-semibold tracking-tight ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
           >
@@ -38,7 +38,7 @@ export function ExperienceSection({ theme }: ExperienceProps) {
             >
               <div className="md:col-span-4 space-y-1">
                 <h3
-                  className={`text-lg font-bold ${
+                  className={`text-lg font-semibold ${
                     theme === "dark" ? "text-zinc-100" : "text-zinc-900"
                   }`}
                 >

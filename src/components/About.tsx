@@ -14,7 +14,7 @@ export function About({ theme }: AboutProps) {
           <div className="lg:col-span-4">
             <h2
               data-reveal
-              className={`text-3xl sm:text-4xl font-bold tracking-tight ${
+              className={`text-3xl sm:text-4xl font-semibold tracking-tight ${
                 theme === "dark" ? "text-zinc-100" : "text-zinc-900"
               }`}
             >

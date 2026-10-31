@@ -95,7 +95,7 @@ body {
 
 .intro-word {
   font-size: clamp(1.75rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.04em;
   animation: intro-word 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }

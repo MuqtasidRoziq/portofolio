@@ -15,7 +15,7 @@ export function ContactSection({ theme }: ContactProps) {
         <div className="max-w-2xl">
           <h2
             data-reveal
-            className={`text-3xl sm:text-4xl font-bold tracking-tight ${
+            className={`text-3xl sm:text-4xl font-semibold tracking-tight ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
           >

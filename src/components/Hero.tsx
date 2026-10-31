@@ -44,7 +44,7 @@ export function Hero({ unlocked, onExplore, theme, onToggleTheme }: HeroProps) {
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
           {/* H1: Greeting & Nama Lengkap */}
           <h1
-            className={`text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight anim-hero-1 ${
+            className={`text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight anim-hero-1 ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
           >

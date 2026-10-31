@@ -15,7 +15,7 @@ export function ProjectsSection({ theme }: ProjectsProps) {
         <div className="mb-14">
           <h2
             data-reveal
-            className={`text-3xl sm:text-4xl font-bold tracking-tight ${
+            className={`text-3xl sm:text-4xl font-semibold tracking-tight ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
           >
@@ -41,7 +41,7 @@ export function ProjectsSection({ theme }: ProjectsProps) {
               <div className="md:col-span-5 space-y-2">
                 <div className="flex items-center gap-3">
                   <h3
-                    className={`text-xl font-bold ${
+                    className={`text-xl font-semibold ${
                       theme === "dark" ? "text-zinc-100" : "text-zinc-900"
                     }`}
                   >
