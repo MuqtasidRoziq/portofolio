@@ -1,6 +1,9 @@
+import Link from "next/link";
+import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
-import { ArrowUpRight } from "lucide-react";
+import { TechIcon } from "@/components/TechIcon";
 import { GithubIcon } from "@/components/SocialIcons";
+import { Sparkles, ExternalLink, ArrowRight } from "lucide-react";
 
 interface ProjectsProps {
   theme: "dark" | "light";
@@ -8,112 +11,167 @@ interface ProjectsProps {
 
 export function ProjectsSection({ theme }: ProjectsProps) {
   const { projects } = portfolioData;
+  const isDark = theme === "dark";
+
+  // Batasi hanya 6 project yang tampil di beranda utama
+  const displayedProjects = projects.slice(0, 6);
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-24 relative overflow-hidden">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="mb-14">
+        {/* Section Header */}
+        <div data-reveal className="mb-14">
           <h2
-            data-reveal
             className={`text-3xl sm:text-4xl font-semibold tracking-tight ${
-              theme === "dark" ? "text-zinc-100" : "text-zinc-900"
+              isDark ? "text-zinc-100" : "text-zinc-900"
             }`}
           >
-            Proyek Pilihan
+            Projects
           </h2>
           <p
-            data-reveal
-            className={`mt-3 text-base max-w-xl ${
-              theme === "dark" ? "text-zinc-400" : "text-zinc-600"
+            className={`mt-2 text-base max-w-xl ${
+              isDark ? "text-zinc-400" : "text-zinc-600"
             }`}
           >
-            Aplikasi dan solusi digital yang telah saya rancang dan bangun dengan standar performa dan kode rapi.
+            Koleksi aplikasi web, mobile, dan sistem perangkat lunak yang telah saya rancang dan kembangkan.
           </p>
         </div>
 
-        <div className="space-y-16">
-          {projects.map((project, idx) => (
+        {/* 3-Column Responsive Card Grid (Maksimal 6 Proyek) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {displayedProjects.map((project, idx) => (
             <article
               key={idx}
               data-reveal
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-6"
+              className={`group flex flex-col justify-between rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                isDark
+                  ? "bg-zinc-900/40 border-zinc-800/80 hover:border-zinc-700 hover:bg-zinc-900/70"
+                  : "bg-white/90 border-zinc-200/90 hover:border-zinc-300 hover:bg-white shadow-xs"
+              }`}
             >
-              <div className="md:col-span-5 space-y-2">
-                <div className="flex items-center gap-3">
+              {/* Bagian Atas: Preview Gambar Mockup */}
+              <div>
+                <div className="relative aspect-video w-full overflow-hidden bg-zinc-950/60 border-b border-zinc-500/10">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={800}
+                      height={450}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-zinc-500 text-xs">
+                      No Preview
+                    </div>
+                  )}
+                </div>
+
+                {/* Konten Card: Judul & Deskripsi */}
+                <div className="p-5 sm:p-5.5 space-y-2.5">
                   <h3
-                    className={`text-xl font-semibold ${
-                      theme === "dark" ? "text-zinc-100" : "text-zinc-900"
+                    className={`text-base font-bold tracking-tight line-clamp-1 transition-colors ${
+                      isDark
+                        ? "text-zinc-100 group-hover:text-white"
+                        : "text-zinc-900 group-hover:text-zinc-950"
                     }`}
                   >
                     {project.title}
                   </h3>
-                </div>
 
-                <div
-                  className={`flex items-center gap-3 pt-2 text-sm ${
-                    theme === "dark" ? "text-zinc-400" : "text-zinc-600"
-                  }`}
-                >
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-1 transition underline underline-offset-4 ${
-                        theme === "dark"
-                          ? "text-zinc-300 hover:text-white"
-                          : "text-zinc-800 hover:text-zinc-950"
-                      }`}
-                    >
-                      Kunjungi Demo
-                      <ArrowUpRight className="h-3.5 w-3.5" />
-                    </a>
-                  )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-1 transition ${
-                        theme === "dark"
-                          ? "text-zinc-400 hover:text-zinc-200"
-                          : "text-zinc-600 hover:text-zinc-900"
-                      }`}
-                      aria-label="Source code"
-                    >
-                      <GithubIcon className="h-4 w-4" />
-                      <span>Source</span>
-                    </a>
-                  )}
+                  <p
+                    className={`text-xs leading-relaxed line-clamp-3 ${
+                      isDark ? "text-zinc-400" : "text-zinc-600"
+                    }`}
+                  >
+                    {project.description}
+                  </p>
+
+                  {/* Teknologi yang digunakan dengan Real Logo */}
+                  <div className="pt-2">
+                    <span className="text-[10px] font-medium text-zinc-500 block mb-1.5 uppercase tracking-wider">
+                      Teknologi:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.map((tag, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[11px] font-medium border ${
+                            isDark
+                              ? "bg-zinc-800/80 text-zinc-300 border-zinc-700/60"
+                              : "bg-zinc-100 text-zinc-700 border-zinc-200"
+                          }`}
+                        >
+                          <TechIcon name={tag} className="w-3 h-3 shrink-0" width={14} height={14} />
+                          <span>{tag}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="md:col-span-7 space-y-4">
-                <p
-                  className={`text-sm sm:text-base leading-relaxed ${
-                    theme === "dark" ? "text-zinc-300" : "text-zinc-700"
-                  }`}
-                >
-                  {project.description}
-                </p>
+              {/* Bagian Bawah: Action Buttons (Demo & Github Links) */}
+              <div className="px-5 pb-5 pt-3 flex items-center gap-2 border-t border-zinc-500/10">
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold transition-all active:scale-95 ${
+                      isDark
+                        ? "bg-zinc-100 text-zinc-950 hover:bg-white"
+                        : "bg-zinc-900 text-zinc-100 hover:bg-zinc-800"
+                    }`}
+                  >
+                    <span>Demo</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <div
+                    className={`flex-1 py-2 px-3 rounded-xl text-xs text-center font-medium opacity-40 border ${
+                      isDark ? "border-zinc-800 text-zinc-500" : "border-zinc-200 text-zinc-400"
+                    }`}
+                  >
+                    Demo N/A
+                  </div>
+                )}
 
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {project.tags.map((tag, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className={`text-xs px-2.5 py-1 rounded ${
-                        theme === "dark"
-                          ? "text-zinc-400 bg-zinc-900"
-                          : "text-zinc-600 bg-zinc-100"
-                      }`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-medium border transition-all active:scale-95 ${
+                      isDark
+                        ? "bg-zinc-900/80 text-zinc-300 border-zinc-800 hover:text-white hover:bg-zinc-800"
+                        : "bg-zinc-100 text-zinc-700 border-zinc-200 hover:text-zinc-950 hover:bg-zinc-200"
+                    }`}
+                    aria-label={`Source code GitHub untuk ${project.title}`}
+                  >
+                    <GithubIcon className="w-3.5 h-3.5" />
+                    <span>Repo</span>
+                  </a>
+                )}
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Tombol Lihat Selengkapnya */}
+        <div data-reveal className="mt-14 flex justify-center">
+          <Link
+            href="/projects"
+            className={`group inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 active:scale-95 border ${
+              isDark
+                ? "bg-zinc-900/80 text-zinc-200 border-zinc-800 hover:bg-zinc-800 hover:border-zinc-700 hover:text-white shadow-xs"
+                : "bg-white text-zinc-800 border-zinc-200/90 hover:bg-zinc-50 hover:border-zinc-300 hover:text-zinc-950 shadow-xs"
+            }`}
+          >
+            <span>Lihat Semua Proyek ({projects.length})</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-emerald-500" />
+          </Link>
         </div>
       </div>
     </section>

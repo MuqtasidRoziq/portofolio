@@ -1,6 +1,7 @@
 export interface Project {
   title: string;
   description: string;
+  image?: string;
   tags: string[];
   link?: string;
   github?: string;
@@ -16,16 +17,30 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  description: string;
+}
+
 export interface Organization {
   role: string;
   name: string;
   period: string;
-  description: string[];
+  description?: string;
 }
 
 export interface SkillCategory {
   category: string;
   skills: string[];
+}
+
+export interface Certificate {
+  title: string;
+  issuer: string;
+  image: string;
+  category?: string;
 }
 
 export interface PortfolioData {
@@ -43,7 +58,9 @@ export interface PortfolioData {
   };
   skills: SkillCategory[];
   experiences: Experience[];
+  education: Education[];
   organizations: Organization[];
+  certificates: Certificate[];
   projects: Project[];
 }
 
@@ -51,11 +68,11 @@ export const portfolioData: PortfolioData = {
   personal: {
     name: "Muhammad Muqtasid Roziq",
     role: "Full-Stack Developer & Software Engineer",
-    bio: "Saya adalah seorang developer yang berfokus merancang dan mengembangkan aplikasi web modern yang cepat, elegan, dan mudah digunakan.",
+    bio: "Mahasiswa Teknik Informatika yang berfokus pada Fullstack Web Development dan Mobile App Development, berpengalaman membangun aplikasi modern yang scalable, efisien, dan berpusat pada pengguna.",
     about: [
-      "Halo! Saya Muqtasid Roziq, seorang pengembang perangkat lunak yang antusias dalam merancang dan mengembangkan solusi digital dari konsep hingga deployment.",
-      "Saya memiliki ketertarikan kuat pada ekosistem web modern seperti React, Next.js, TypeScript, serta arsitektur backend yang andal. Saya selalu berkomitmen untuk menulis kode yang bersih, mudah dipelihara, dan berpusat pada pengalaman pengguna.",
-      "Selain ngoding, saya aktif berkolaborasi dalam organisasi teknologi, berbagi pengetahuan dengan komunitas, dan terus mengeksplorasi tren teknologi terbaru."
+      "Saya adalah mahasiswa Teknik Informatika yang berfokus mendalam pada Fullstack Web Development dan Mobile App Development.",
+      "Berpengalaman merancang serta membangun aplikasi web dan mobile end-to-end melalui berbagai proyek nyata dan kolaborasi tim. Keahlian teknis saya mencakup arsitektur antarmuka modern, perancangan RESTful API, manajemen database terstruktur, sistem autentikasi yang aman, hingga integrasi sistem secara menyeluruh dengan teknologi utama seperti Laravel, Next.js, dan Flutter.",
+      "Terbiasa bekerja secara mandiri maupun bersinergi dalam tim lintas fungsi, dengan komitmen kuat pada pemecahan masalah (problem solving), komunikasi efektif, serta kecepatan beradaptasi dengan teknologi baru."
     ],
     location: "Tegal, Jawa Tengah, Indonesia",
     email: "muqtasidofficial@gmail.com",
@@ -94,60 +111,104 @@ export const portfolioData: PortfolioData = {
       technologies: ["PHP", "Bootstrap", "MySQL", "Node.js", "SEO Optimization"],
     },
   ],
+  education: [
+    {
+      degree: "Sarjana Terapan Teknik Informatika",
+      institution: "Universitas Harkat Negeri",
+      period: "September 2023 - Sekarang",
+      description: "Mendalami rekayasa perangkat lunak dengan fokus pada pengembangan sistem web full-stack, mobile computing, manajemen basis data, dan implementasi algoritma modern.",
+    },
+  ],
   organizations: [
     {
-      role: "Lead / Core Member",
-      name: "Google Developer Student Club / Tech Community",
-      period: "2023 - 2024",
-      description: [
-        "Menginisiasi dan memfasilitasi workshop teknis mengenai web development dan open-source.",
-        "Memimpin kepanitiaan tech event dan webinar yang dihadiri oleh ratusan peserta.",
-        "Membangun kolaborasi aktif antar anggota untuk mengerjakan mini project bersama."
-      ],
+      role: "Staff Divisi Kominfo",
+      name: "Hima Prodi Teknik Informatika",
+      period: "Februari 2025 - Januari 2026",
+      description: "Bertanggung jawab atas pengelolaan media komunikasi digital, produksi konten edukasi teknologi, dan publikasi informasi kegiatan program studi.",
     },
     {
-      role: "Koordinator Divisi IT & Riset",
-      name: "Himpunan Mahasiswa Informatika / Komputer",
-      period: "2022 - 2023",
-      description: [
-        "Mengelola website resmi organisasi dan sistem pendataan kegiatan kampus.",
-        "Melakukan sharing session mingguan mengenai pengenalan pemrograman untuk mahasiswa baru.",
-        "Mendukung infrastruktur teknologi untuk berbagai agenda dan kompetisi kampus."
-      ],
+      role: "IT Support",
+      name: "INVOFEST (Informatics Festival)",
+      period: "November 2025",
+      description: "Mengawal kelancaran infrastruktur teknis, kestabilan jaringan, dan troubleshooting sistem pendukung selama berlangsungnya festival teknologi.",
+    },
+  ],
+  certificates: [
+    {
+      title: "Belajar Dasar Pemrograman Web",
+      issuer: "Dicoding Academy",
+      image: "/assets/sertifikat/webdasar.webp",
+      category: "Web Development",
+    },
+    {
+      title: "Belajar Dasar Pemrograman JavaScript",
+      issuer: "Dicoding Academy",
+      image: "/assets/sertifikat/javascripts.webp",
+      category: "Programming Language",
+    },
+    {
+      title: "Belajar Membuat Front-End Web untuk Pemula",
+      issuer: "Dicoding Academy",
+      image: "/assets/sertifikat/front-end.webp",
+      category: "Frontend Development",
     },
   ],
   projects: [
     {
-      title: "Modern Portfolio & Showcase Web",
-      description: "Platform portofolio personal interaktif dengan performa tinggi, animasi elegan, dark mode aesthetic, dan navigasi mulus dibangun dengan Next.js App Router.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Responsive Design"],
-      link: "https://example.com",
+      title: "CMS mysch.id",
+      description: "Content Management System (CMS) terpusat untuk mengelola, menerbitkan, dan mendistribusikan semua konten ke berbagai website satelit sekolah.",
+      image: "/assets/projects/porto-cms.webp",
+      tags: ["PHP", "Bootstrap", "MySQL", "Node.js"],
+      link: undefined,
+      github: "https://github.com/muqtasidroziq",
+    },
+    {
+      title: "Landing Page absensisiswa.co.id",
+      description: "Website satelit terintegrasi dari CMS mysch.id yang berfungsi sebagai platform landing page dan informasi presensi siswa digital.",
+      image: "/assets/projects/websatelite.webp",
+      tags: ["PHP", "Bootstrap", "MySQL", "Node.js"],
+      link: "https://absensisiswa.co.id",
+      github: "https://github.com/muqtasidroziq",
+    },
+    {
+      title: "Teraparent (Mobile App)",
+      description: "Aplikasi mobile identifikasi & monitoring anak berkebutuhan khusus (ADHD, speech delay, autisme) lengkap dengan rekomendasi terapis dan psikiater.",
+      image: "/assets/projects/teraparent.webp",
+      tags: ["Flutter", "PostgreSQL", "Express.js", "MongoDB"],
+      link: "https://play.google.com/store/apps/details?id=com.hn.teraprent&pcampaignid=web_share",
+      github: "https://github.com/MuqtasidRoziq/TeraparentApp",
+    },
+    {
+      title: "Dietkuy",
+      description: "Aplikasi mobile rekomendasi pola diet cerdas berbasis klasifikasi postur tubuh menggunakan visi komputer (MediaPipe).",
+      image: "/assets/projects/mobile-app.svg",
+      tags: ["Flutter", "Flask", "MySQL", "MediaPipe"],
+      link: undefined,
+      github: "https://github.com/MuqtasidRoziq/dietapps-mobile",
+    },
+    {
+      title: "Web E-Commerce Phone",
+      description: "Website e-commerce katalog dan transaksi penjualan berbagai jenis handphone yang dibangun untuk proyek tugas akhir semester 4.",
+      image: "/assets/projects/ticketing-event.svg",
+      tags: ["Laravel", "MySQL", "Node.js"],
+      link: undefined,
+      github: "https://github.com/MuqtasidRoziq/e-commerce-el.git",
+    },
+    {
+      title: "Point Of Sale (POS) UMKM Crepes",
+      description: "Aplikasi kasir desktop untuk operasional usaha mikro UMKM Crepes yang memudahkan pencatatan transaksi dan pelaporan penjualan.",
+      image: "/assets/projects/ticketing-event.svg",
+      tags: ["Java", "NetBeans"],
+      link: undefined,
+      github: "https://github.com/MuqtasidRoziq/kasir-crepes",
+    },
+    {
+      title: "Personal Portfolio & Showcase",
+      description: "Website portofolio interaktif dengan animasi pengetikan real-time, responsive design, serta dark/light mode modern.",
+      image: "/assets/projects/porto.webp",
+      tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
+      link: "https://muqtasidroziq.my.id",
       github: "https://github.com/muqtasidroziq/portofolio",
-      featured: true,
-    },
-    {
-      title: "E-Commerce Dashboard & Analytics",
-      description: "Dashboard manajemen produk, pesanan, dan analitik penjualan real-time dengan visualisasi data interaktif dan proteksi autentikasi.",
-      tags: ["React", "Next.js", "Tailwind CSS", "PostgreSQL", "Prisma"],
-      link: "https://example.com",
-      github: "https://github.com/muqtasidroziq",
-      featured: true,
-    },
-    {
-      title: "Task & Workspace Management App",
-      description: "Aplikasi produktivitas berbasis kanban board dengan fitur drag-and-drop, manajemen deadline, dan kolaborasi tim.",
-      tags: ["TypeScript", "Next.js", "Tailwind CSS", "REST API"],
-      link: "https://example.com",
-      github: "https://github.com/muqtasidroziq",
-      featured: false,
-    },
-    {
-      title: "Community Event & Ticketing Portal",
-      description: "Sistem registrasi kegiatan daring dan luring dengan generator e-ticket dan validasi QR Code.",
-      tags: ["Next.js", "Tailwind CSS", "Node.js", "MySQL"],
-      link: "https://example.com",
-      github: "https://github.com/muqtasidroziq",
-      featured: false,
     },
   ],
 };

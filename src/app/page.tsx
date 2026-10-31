@@ -7,6 +7,7 @@ import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { ExperienceSection } from "@/components/Experience";
 import { OrganizationSection } from "@/components/Organization";
+import { CertificatesSection } from "@/components/Certificates";
 import { ProjectsSection } from "@/components/Projects";
 import { ContactSection } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -22,6 +23,18 @@ export default function Home() {
     const savedTheme = localStorage.getItem("portfolio-theme") as "dark" | "light" | null;
     if (savedTheme) {
       setTheme(savedTheme);
+    }
+
+    // Jika user datang dengan hash (#projects, #about, dll), otomatis unlock dan scroll
+    if (window.location.hash) {
+      const hashId = window.location.hash.replace("#", "");
+      setUnlocked(true);
+      setTimeout(() => {
+        const targetEl = document.getElementById(hashId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300);
     }
   }, []);
 
@@ -77,6 +90,7 @@ export default function Home() {
             <Skills theme={theme} />
             <ExperienceSection theme={theme} />
             <OrganizationSection theme={theme} />
+            <CertificatesSection theme={theme} />
             <ProjectsSection theme={theme} />
             <ContactSection theme={theme} />
           </div>

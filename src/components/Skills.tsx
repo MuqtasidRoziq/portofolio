@@ -27,7 +27,7 @@ export function Skills({ theme }: SkillsProps) {
   ];
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-24 relative overflow-hidden">
       <div className="mx-auto max-w-5xl px-6">
         {/* Header Section */}
         <div data-reveal className="mb-12">
@@ -81,15 +81,15 @@ export function Skills({ theme }: SkillsProps) {
               data-reveal
               className={`group flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
                 isDark
-                  ? "bg-zinc-900/50 border-zinc-800/80 hover:border-zinc-700 hover:bg-zinc-900/90"
+                  ? "bg-zinc-900/50 border-zinc-800/80 hover:border-zinc-700 hover:bg-zinc-900/80"
                   : "bg-white/80 border-zinc-200/80 hover:border-zinc-300 hover:bg-white shadow-xs"
               }`}
             >
               <div
                 className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center p-2.5 shrink-0 transition-transform duration-300 group-hover:scale-110 ${
                   isDark
-                    ? "bg-zinc-800/80 group-hover:bg-zinc-800 border border-zinc-700/50"
-                    : "bg-zinc-100 group-hover:bg-zinc-200/70 border border-zinc-200/80"
+                    ? "bg-zinc-800/80 border border-zinc-700/50"
+                    : "bg-zinc-100 border border-zinc-200/80"
                 }`}
               >
                 <Image

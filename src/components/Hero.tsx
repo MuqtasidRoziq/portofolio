@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
 import { ArrowDown, Mail, Sun, Moon } from "lucide-react";
@@ -14,6 +15,54 @@ interface HeroProps {
 
 export function Hero({ unlocked, onExplore, theme, onToggleTheme }: HeroProps) {
   const { personal } = portfolioData;
+
+  // Typing effect animation yang berulang setiap 5 detik setelah selesai
+  const fullText = `Hai, Saya ${personal.name}`;
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTypingDone, setIsTypingDone] = useState(false);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    let isCancelled = false;
+
+    const runTypingLoop = () => {
+      let currentIndex = 0;
+      setIsTypingDone(false);
+      setDisplayedText("");
+
+      const interval = setInterval(() => {
+        if (isCancelled) {
+          clearInterval(interval);
+          return;
+        }
+
+        if (currentIndex <= fullText.length) {
+          setDisplayedText(fullText.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(interval);
+          setIsTypingDone(true);
+          // Tunggu 5 detik sebelum mengetik ulang
+          timer = setTimeout(() => {
+            if (!isCancelled) {
+              runTypingLoop();
+            }
+          }, 5000);
+        }
+      }, 55);
+    };
+
+    // Delay awal saat halaman pertama dimuat
+    const initialDelay = setTimeout(() => {
+      runTypingLoop();
+    }, 700);
+
+    return () => {
+      isCancelled = true;
+      clearTimeout(initialDelay);
+      clearTimeout(timer);
+    };
+  }, [fullText]);
 
   return (
     <section
@@ -42,13 +91,18 @@ export function Hero({ unlocked, onExplore, theme, onToggleTheme }: HeroProps) {
       <div className="max-w-5xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Sisi Kiri: Teks, Headline, Deskripsi, Tombol Aksi & Sosmed */}
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
-          {/* H1: Greeting & Nama Lengkap */}
+          {/* H1: Greeting & Nama Lengkap dengan JetBrains Mono font & Typing Effect */}
           <h1
-            className={`text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight anim-hero-1 ${
+            className={`font-mono text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight min-h-[2.5em] lg:min-h-[2.2em] ${
               theme === "dark" ? "text-zinc-100" : "text-zinc-900"
             }`}
           >
-            Hai, Saya {personal.name}
+            <span>{displayedText}</span>
+            <span
+              className={`inline-block w-[3px] sm:w-[4px] h-[0.9em] ml-1 bg-emerald-400 align-baseline ${
+                isTypingDone ? "animate-pulse" : "opacity-100"
+              }`}
+            />
           </h1>
 
           {/* Deskripsi Singkat yang Natural & Menarik */}
@@ -77,18 +131,6 @@ export function Hero({ unlocked, onExplore, theme, onToggleTheme }: HeroProps) {
                 }`}
               />
             </button>
-
-            <a
-              href={`mailto:${personal.email}`}
-              className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors ${
-                theme === "dark"
-                  ? "bg-zinc-900 text-zinc-300 hover:text-white"
-                  : "bg-zinc-100 text-zinc-700 hover:text-zinc-900"
-              }`}
-            >
-              <Mail className="h-4 w-4" />
-              <span>Email</span>
-            </a>
           </div>
 
           {/* Tombol-tombol Sosial Media: GitHub, LinkedIn, Instagram, Email */}
