@@ -57,7 +57,7 @@ export const portfolioData: PortfolioData = {
       "Saya memiliki ketertarikan kuat pada ekosistem web modern seperti React, Next.js, TypeScript, serta arsitektur backend yang andal. Saya selalu berkomitmen untuk menulis kode yang bersih, mudah dipelihara, dan berpusat pada pengalaman pengguna.",
       "Selain ngoding, saya aktif berkolaborasi dalam organisasi teknologi, berbagi pengetahuan dengan komunitas, dan terus mengeksplorasi tren teknologi terbaru."
     ],
-    location: "Indonesia",
+    location: "Tegal, Jawa Tengah, Indonesia",
     email: "muqtasidofficial@gmail.com",
     github: "https://github.com/muqtasidroziq",
     linkedin: "https://www.linkedin.com/in/muhammad-muqtasid-roziq/",
@@ -66,42 +66,32 @@ export const portfolioData: PortfolioData = {
   },
   skills: [
     {
-      category: "Frontend",
-      skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "HTML5/CSS3", "Redux / Zustand"],
+      category: "Frontend & Mobile",
+      skills: ["React.js", "Next.js", "Flutter", "Dart", "JavaScript", "Tailwind CSS", "Bootstrap"],
     },
     {
-      category: "Backend & Database",
-      skills: ["Node.js", "Express.js", "PostgreSQL", "MySQL", "Prisma ORM", "RESTful API"],
+      category: "Backend & Framework",
+      skills: ["PHP", "Laravel", "Node.js", "Python", "Flask"],
     },
     {
-      category: "Tools & DevOps",
-      skills: ["Git & GitHub", "Docker", "Linux / Shell", "Postman", "Vercel", "Figma"],
+      category: "Database & Tools",
+      skills: ["MySQL", "MongoDB", "Git", "Postman", "Ubuntu"],
     },
   ],
   experiences: [
     {
-      role: "Full-Stack Web Developer",
-      company: "Tech Solutions Inc.",
-      period: "2024 - Sekarang",
-      location: "Remote / Hybrid",
+      role: "Fullstack Developer Intern",
+      company: "PT. Bumi Tekno Indonesia",
+      period: "Juli 2026 - November 2026",
+      location: "Temanggung, Jawa Tengah, Indonesia",
       description: [
-        "Mengembangkan dan memelihara fitur web interaktif menggunakan Next.js, TypeScript, dan Tailwind CSS.",
-        "Mengoptimalkan performa halaman web sehingga meningkatkan skor Core Web Vitals hingga 25%.",
-        "Merancang integrasi API backend dan manajemen state aplikasi yang efisien dan modular."
+        "Mengembangkan CMS terpusat dan jaringan website satelit untuk manajemen serta distribusi konten multi-platform.",
+        "Membangun backend dan skema database menggunakan PHP Native dan MySQL.",
+        "Mengintegrasikan layanan pendukung dan automasi data menggunakan Node.js.",
+        "Menerapkan optimasi On-Page SEO (meta tags dinamis, sitemap, dan semantic HTML) untuk meningkatkan visibilitas pencarian.",
+        "Membangun antarmuka dashboard CMS yang responsif dan user-friendly menggunakan Bootstrap."
       ],
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
-    },
-    {
-      role: "Frontend Developer Intern",
-      company: "Digital Creative Studio",
-      period: "2023 - 2024",
-      location: "Indonesia",
-      description: [
-        "Membangun antarmuka landing page responsif berdasarkan wireframe Figma.",
-        "Bekerja sama dengan tim UI/UX dan backend developer untuk memastikan implementasi desain yang presisi.",
-        "Menerapkan best practices clean code dan version control menggunakan Git."
-      ],
-      technologies: ["React.js", "JavaScript", "Tailwind CSS", "Git"],
+      technologies: ["PHP", "Bootstrap", "MySQL", "Node.js", "SEO Optimization"],
     },
   ],
   organizations: [
