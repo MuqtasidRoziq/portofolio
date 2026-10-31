@@ -49,7 +49,7 @@ export interface PortfolioData {
 
 export const portfolioData: PortfolioData = {
   personal: {
-    name: "Muqtasid Roziq",
+    name: "Muhammad Muqtasid Roziq",
     role: "Full-Stack Developer & Software Engineer",
     bio: "Pengembang perangkat lunak yang berfokus pada pembangunan aplikasi web modern, performan, responsif, dan mudah digunakan.",
     about: [

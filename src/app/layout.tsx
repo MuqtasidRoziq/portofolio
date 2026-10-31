@@ -10,7 +10,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "Muqtasid Roziq | Portfolio & Software Engineer",
   description:
-    "Portofolio resmi Muqtasid Roziq - Full-Stack Developer & Software Engineer. Menampilkan profil, pengalaman, organisasi, keahlian, dan showcase proyek web modern.",
+    "Portofolio resmi Muqtasid Roziq - Full-Stack Developer & Software Engineer.",
 };
 
 export default function RootLayout({

@@ -165,7 +165,7 @@ export function Hero({ unlocked, onExplore, theme, onToggleTheme }: HeroProps) {
             }`}
           >
             <Image
-              src="/profile.png"
+              src="/profile.webp"
               alt={personal.name}
               fill
               sizes="(max-width: 640px) 224px, (max-width: 1024px) 288px, 320px"
