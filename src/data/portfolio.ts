@@ -171,6 +171,22 @@ export const portfolioData: PortfolioData = {
       github: "https://github.com/muqtasidroziq",
     },
     {
+      title: "Landing Page websitesekolah.co.id",
+      description: "Website satelit terintegrasi dari CMS mysch.id yang berfungsi sebagai platform landing page dan informasi presensi siswa digital.",
+      image: "/assets/projects/websitesekolah.webp",
+      tags: ["PHP", "Bootstrap", "MySQL", "Node.js"],
+      link: "https://websitesekolah.co.id",
+      github: "https://github.com/muqtasidroziq",
+    },
+    {
+      title: "Personal Portfolio & Showcase",
+      description: "Website portofolio interaktif dengan animasi pengetikan real-time, responsive design, serta dark/light mode modern.",
+      image: "/assets/projects/porto.webp",
+      tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
+      link: "https://muqtasidroziq.my.id",
+      github: "https://github.com/muqtasidroziq/portofolio",
+    },
+    {
       title: "Teraparent (Mobile App)",
       description: "Aplikasi mobile identifikasi & monitoring anak berkebutuhan khusus (ADHD, speech delay, autisme) lengkap dengan rekomendasi terapis dan psikiater.",
       image: "/assets/projects/teraparent.webp",
@@ -201,14 +217,6 @@ export const portfolioData: PortfolioData = {
       tags: ["Java", "NetBeans"],
       link: undefined,
       github: "https://github.com/MuqtasidRoziq/kasir-crepes",
-    },
-    {
-      title: "Personal Portfolio & Showcase",
-      description: "Website portofolio interaktif dengan animasi pengetikan real-time, responsive design, serta dark/light mode modern.",
-      image: "/assets/projects/porto.webp",
-      tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
-      link: "https://muqtasidroziq.my.id",
-      github: "https://github.com/muqtasidroziq/portofolio",
     },
   ],
 };
