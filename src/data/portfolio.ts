@@ -222,7 +222,7 @@ export const portfolioData: PortfolioData = {
       title: "Point Of Sale (POS) UMKM Crepes",
       description: "Aplikasi kasir desktop untuk operasional usaha mikro UMKM Crepes yang memudahkan pencatatan transaksi dan pelaporan penjualan.",
       image: "/assets/projects/ticketing-event.svg",
-      tags: ["Java", "NetBeans"],
+      tags: ["Java", "NetBeans", "MySql"],
       link: undefined,
       github: "https://github.com/MuqtasidRoziq/kasir-crepes",
     },
