@@ -155,6 +155,14 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
+      title: "My Bouquet Tegal Website",
+      description: "Website Profile Untuk UMKM My Bouquet Tegal yang menampilkan katalog produk, informasi layanan, dan integrasi pemesanan online.",
+      image: "/assets/projects/mybouquet.webp",
+      tags: ["Next.js", "Tailwind CSS", "SQLite", "Node.js", "Claudfare"],
+      link: "https://mybouquettegal.biz.id",
+      github: "https://github.com/MuqtasidRoziq/MyBouquetTegal.git",
+    },
+    {
       title: "CMS mysch.id",
       description: "Content Management System (CMS) terpusat untuk mengelola, menerbitkan, dan mendistribusikan semua konten ke berbagai website satelit sekolah.",
       image: "/assets/projects/porto-cms.webp",
